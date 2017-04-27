@@ -1,0 +1,2 @@
+Some plates do have ',' between plate numbers.
+Some summon_numbers might be duplicated.

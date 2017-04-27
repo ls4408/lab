@@ -1,0 +1,25 @@
+#Problem 1
+mysql> Select sname
+    -> From sailors S
+    -> WHERE S.sid NOT IN
+    -> (SELECT sid
+    -> From Reserves);
+
+#Problem 2
+mysql> SELECT DISTINCT S.sname
+    -> FROM sailors S, boats B, reserves R
+    -> WHERE S.sid = R.sid AND R.bid = B.bid AND
+    -> B.color='red' AND S.sid NOT IN
+    -> (SELECT S2.sid
+    -> FROM sailors S2, boats B2, reserves R2
+    -> WHERE S2.sid=R2.sid AND R2.bid=B2.bid AND
+    -> B2.color='green');
+
+
+
+#Problem 3
+mysql> SELECT sname
+    -> From sailors S1
+    -> Where S1.rating> All (Select rating
+    -> FROM sailors S2
+    -> WHERE sname='horatio');
